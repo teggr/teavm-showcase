@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A small number guessing game built with Java and TeaVM.">
+    <title>Number Guessing Game | TeaVM Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="classes.js" defer></script>
+    <script src="bootstrap.js" defer></script>
+</head>
+<body>
+<main class="game-card">
+    <p class="eyebrow">A Java game in your browser</p>
+    <h1>Number Guessing</h1>
+    <p class="instructions">I picked a number from <strong>1 to 10</strong>. Can you find it?</p>
+
+    <label for="guess">Your guess</label>
+    <div class="guess-controls">
+        <input id="guess" name="guess" type="number" min="1" max="10" step="1"
+               inputmode="numeric" autocomplete="off" aria-describedby="feedback">
+        <button id="guess-button" type="button">Guess</button>
+    </div>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite">Loading game…</p>
+    <p class="counter">Valid guesses: <span id="guess-count">0</span></p>
+    <button id="new-game-button" class="new-game" type="button" hidden>Start a new game</button>
+</main>
+</body>
+</html>
