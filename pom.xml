@@ -13,6 +13,7 @@
 
     <modules>
         <module>teavm-showcase-number-guessing</module>
+        <module>teavm-showcase-currency-converter</module>
     </modules>
 
     <properties>
@@ -20,5 +21,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <teavm.version>0.16.0</teavm.version>
         <junit.version>5.12.2</junit.version>
+        <spring-boot.version>4.0.8</spring-boot.version>
+        <chartjs.version>4.5.1</chartjs.version>
     </properties>
 </project>

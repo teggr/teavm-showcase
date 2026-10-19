@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore deterministic currency conversions built with Java, TeaVM and Spring Boot.">
+    <title>Currency Explorer | TeaVM Showcase</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="vendor/chart.umd.min.js" defer></script>
+    <script src="classes.js" defer></script>
+    <script src="bootstrap.js" defer></script>
+</head>
+<body>
+<main class="explorer">
+    <header class="page-header">
+        <p class="eyebrow">Java in the browser · TeaVM Showcase</p>
+        <h1>Currency Explorer</h1>
+        <p>Convert between four currencies using deterministic demonstration rates. These fixtures are not live market data.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="conversion-heading">
+        <h2 id="conversion-heading">Convert an amount</h2>
+        <form id="conversion-form">
+            <div class="form-grid">
+                <div class="field amount-field">
+                    <label for="amount">Amount</label>
+                    <input id="amount" name="amount" type="text" inputmode="decimal" autocomplete="off"
+                           aria-describedby="amount-help">
+                    <small id="amount-help">Up to 1,000,000; maximum 2 decimal places.</small>
+                </div>
+                <div class="field">
+                    <label for="from">From</label>
+                    <select id="from" name="from">
+                        <option value="GBP">GBP — British pound</option>
+                        <option value="EUR">EUR — Euro</option>
+                        <option value="USD">USD — US dollar</option>
+                        <option value="JPY">JPY — Japanese yen</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="to">To</label>
+                    <select id="to" name="to">
+                        <option value="EUR">EUR — Euro</option>
+                        <option value="GBP">GBP — British pound</option>
+                        <option value="USD">USD — US dollar</option>
+                        <option value="JPY">JPY — Japanese yen</option>
+                    </select>
+                </div>
+            </div>
+            <button id="submit-button" type="submit">Convert</button>
+        </form>
+        <p id="result" class="result" aria-live="polite"></p>
+        <p id="status" class="status" role="status" aria-live="polite">Enter an amount to begin.</p>
+    </section>
+
+    <section class="panel chart-panel" aria-labelledby="chart-heading">
+        <div>
+            <p class="eyebrow">API demo history</p>
+            <h2 id="chart-heading">Conversion rate over time</h2>
+            <p class="chart-description">The selected pair's illustrative daily rate series. These generated demo points are not historical market data.</p>
+        </div>
+        <div class="chart-wrap">
+            <canvas id="rate-chart" role="img" aria-label="Illustrative conversion rate over time for the selected currency pair"></canvas>
+        </div>
+        <p class="fixture-note">Illustrative generated demo series based on the fixed fixture rate · not market history or financial advice.</p>
+    </section>
+</main>
+</body>
+</html>
