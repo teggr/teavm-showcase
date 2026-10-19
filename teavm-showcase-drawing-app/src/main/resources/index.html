@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A small drawing editor built with Java, TeaVM and HTML Canvas.">
+    <title>Drawing App | TeaVM Showcase</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="classes.js" defer></script>
+    <script src="bootstrap.js" defer></script>
+</head>
+<body>
+<main class="editor">
+    <header class="page-heading">
+        <p class="eyebrow">A Java drawing editor in your browser</p>
+        <h1>Canvas Studio</h1>
+        <p class="subtitle">Draw, select, move and recolour shapes. Your scene is modelled in Java.</p>
+    </header>
+
+    <section class="workspace" aria-label="Drawing editor">
+        <div class="toolbar">
+            <div class="tool-group" role="group" aria-label="Drawing tools">
+                <button id="tool-select" class="tool-button" type="button" aria-pressed="true">Select</button>
+                <button id="tool-rectangle" class="tool-button" type="button" aria-pressed="false">Rectangle</button>
+                <button id="tool-ellipse" class="tool-button" type="button" aria-pressed="false">Ellipse</button>
+                <button id="tool-arrow" class="tool-button" type="button" aria-pressed="false">Arrow</button>
+            </div>
+            <div class="palette" role="group" aria-label="Shape colours">
+                <button id="color-blue" class="swatch blue" type="button" aria-label="Recolour blue" title="Blue"></button>
+                <button id="color-red" class="swatch red" type="button" aria-label="Recolour red" title="Red"></button>
+                <button id="color-green" class="swatch green" type="button" aria-label="Recolour green" title="Green"></button>
+                <button id="color-amber" class="swatch amber" type="button" aria-label="Recolour amber" title="Amber"></button>
+                <button id="color-purple" class="swatch purple" type="button" aria-label="Recolour purple" title="Purple"></button>
+            </div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Select a shape to move it, or choose a drawing tool.</p>
+        <div class="canvas-frame">
+            <canvas id="drawing-canvas" width="960" height="600"
+                    aria-label="Drawing canvas. Use pointer to draw or move shapes."></canvas>
+        </div>
+        <p class="hint">Choose a tool, then drag on the canvas. Select a shape to move it; choose a colour to recolour it.</p>
+    </section>
+</main>
+</body>
+</html>
