@@ -8,11 +8,10 @@ TeaVM **0.16.0** is pinned in the root `pom.xml`, matching the current official 
 
 ```sh
 mvn -pl teavm-showcase-number-guessing -am test
-mvn -pl teavm-showcase-number-guessing -am package
-python -m http.server 8000 --directory teavm-showcase-number-guessing/target/javascript
+mvn -f teavm-showcase-number-guessing/pom.xml process-classes exec:java
 ```
 
-Open <http://localhost:8000/> in a modern browser. Serve the generated directory over HTTP rather than opening the HTML file directly. The complete app is written to `teavm-showcase-number-guessing/target/javascript/`: `index.html`, `styles.css`, the generated `classes.js` and source map, and a one-line `bootstrap.js` that starts TeaVM's exported `main` entry point. The project uses Java 17 bytecode, `teavm-classlib`, and TeaVM's `teavm-jso-apis` browser wrappers.
+The second command compiles the TeaVM app and starts its Java static server. Open <http://localhost:8000/> in a modern browser; stop the server with Ctrl+C. The complete app is written to `teavm-showcase-number-guessing/target/javascript/`: `index.html`, `styles.css`, the generated `classes.js` and source map, and a one-line `bootstrap.js` that starts TeaVM's exported `main` entry point. The project uses Java 17 bytecode, `teavm-classlib`, and TeaVM's `teavm-jso-apis` browser wrappers.
 
 ## Project layout
 

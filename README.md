@@ -21,4 +21,4 @@ To work with the number guessing module alone, use `mvn -pl teavm-showcase-numbe
 
 Build and test all examples with `mvn clean verify`. To build just the currency explorer, run `mvn -pl teavm-showcase-currency-converter clean verify`. Start its same-origin browser app with `java -jar teavm-showcase-currency-converter/target/teavm-showcase-currency-converter-1.0-SNAPSHOT.jar` and open <http://localhost:8080/>. See the [module README](teavm-showcase-currency-converter/README.md) for API examples and implementation details.
 
-Build the drawing editor with `mvn -pl teavm-showcase-drawing-app -am clean verify`; serve `teavm-showcase-drawing-app/target/javascript/` with a static HTTP server to try it. See the [drawing app README](teavm-showcase-drawing-app/README.md) for instructions.
+Build and run the drawing editor with `mvn -f teavm-showcase-drawing-app/pom.xml clean process-classes exec:java`, then open <http://localhost:8000/>. The Java server serves the TeaVM output directly; see the [drawing app README](teavm-showcase-drawing-app/README.md) for details.
