@@ -14,6 +14,7 @@
     <modules>
         <module>teavm-showcase-number-guessing</module>
         <module>teavm-showcase-currency-converter</module>
+        <module>teavm-showcase-drawing-app</module>
     </modules>
 
     <properties>
