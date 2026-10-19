@@ -4,7 +4,7 @@
 
 `DrawingModel` stores ordered Java shape objects and the selected shape. `DrawingController` handles tool state and pointer gestures; `DrawingRenderer` clears and redraws the canvas from the model after each interaction. `DrawingApp` wires HTML controls and browser events. TeaVM 0.16.0's JSO bindings provide the DOM, `EventListener` and Canvas 2D APIs. The small `CanvasInterop` class uses `@JSBody` only for PointerEvent properties and pointer capture, for which this JSO version has no typed PointerEvent wrapper.
 
-The module uses the repository's Java 17 and Maven conventions, with versions inherited from the root POM. It has no server dependency: TeaVM emits a static browser app into `target/javascript`, which can be served with Python's built-in HTTP server.
+The module uses the repository's Java 17 and Maven conventions, with versions inherited from the root POM. TeaVM emits a static browser app into `target/javascript`; NanoHTTPD serves that output from a Java entry point launched by Maven.
 
 ## Shape representation and movement
 
@@ -74,18 +74,18 @@ From the repository root, use the verified command:
 mvn -pl teavm-showcase-drawing-app -am clean verify
 ```
 
-Serve the generated app:
+Build the generated app and start the Java static server:
 
 ```sh
-python -m http.server 8000 --directory teavm-showcase-drawing-app/target/javascript
+mvn -f teavm-showcase-drawing-app/pom.xml process-classes exec:java
 ```
 
-Then open <http://localhost:8000/>.
+Then open <http://localhost:8000/>. Stop the server with Ctrl+C.
 
 ## Verification record
 
 - `mvn -pl teavm-showcase-drawing-app -am clean verify` — passed, including Maven compilation, TeaVM 0.16.0 JavaScript generation and all 9 model/controller tests (0 failures, 0 errors, 0 skipped).
-- The generated page was served at `http://localhost:8000/` with `python -m http.server 8000 --directory teavm-showcase-drawing-app/target/javascript`.
+- The generated page is served at `http://localhost:8000/` by the Maven-launched NanoHTTPD server.
 - Browser: Chrome Headless 155.0.8059.39 at a 1440 × 1000 viewport. Confirmed a 2D context, rectangle/ellipse/arrow drawing, reverse-direction ellipse geometry, selecting and moving a shape, red and green recolouring, and continued movement after dragging outside the canvas. No browser console errors or runtime exceptions were reported.
 - Screenshot captured from the running app after drawing a red rectangle, a selected green ellipse and a blue arrow:
 

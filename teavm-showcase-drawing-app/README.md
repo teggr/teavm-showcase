@@ -8,10 +8,10 @@ Use Java 17 or newer and Maven 3.9 or newer. The repository does not include a M
 
 ```sh
 mvn -pl teavm-showcase-drawing-app -am clean verify
-python -m http.server 8000 --directory teavm-showcase-drawing-app/target/javascript
+mvn -f teavm-showcase-drawing-app/pom.xml process-classes exec:java
 ```
 
-Open <http://localhost:8000/> in a modern browser. Serve the generated output over HTTP; do not open the HTML file directly. The TeaVM compiler writes `classes.js`, its source map, `index.html`, `styles.css` and `bootstrap.js` to `teavm-showcase-drawing-app/target/javascript/`.
+The second command compiles the TeaVM app and starts its Java static server. Open <http://localhost:8000/> in a modern browser; stop the server with Ctrl+C. Serve the generated output over HTTP; do not open the HTML file directly. The TeaVM compiler writes `classes.js`, its source map, `index.html`, `styles.css` and `bootstrap.js` to `teavm-showcase-drawing-app/target/javascript/`.
 
 ## Using the editor
 

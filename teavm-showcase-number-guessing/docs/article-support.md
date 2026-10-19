@@ -97,6 +97,6 @@ The full module configuration, including the Java 17 compiler and test dependenc
 
 ## Build and browser checks
 
-The root `pom.xml` pins `org.teavm:teavm-maven-plugin` and `org.teavm:teavm-classlib` to **0.16.0**. Run `mvn -pl teavm-showcase-number-guessing -am test` for the deterministic model tests and `mvn -pl teavm-showcase-number-guessing -am package` to compile the browser app. Serve `teavm-showcase-number-guessing/target/javascript/` over HTTP, for example with `python -m http.server 8000 --directory teavm-showcase-number-guessing/target/javascript`.
+The root `pom.xml` pins `org.teavm:teavm-maven-plugin` and `org.teavm:teavm-classlib` to **0.16.0**. Run `mvn -pl teavm-showcase-number-guessing -am test` for the deterministic model tests. Build the browser app and start the Java static server with `mvn -f teavm-showcase-number-guessing/pom.xml process-classes exec:java`; open <http://localhost:8000/>. Stop the server with Ctrl+C.
 
 The game module's `mvn test` passed with all six game-logic tests. Its `mvn package` completed successfully and Chromium verification exercised empty, decimal and out-of-range input, Enter submission, button submission, winning, and restart; no page errors were reported. The screenshot is `teavm-showcase-number-guessing/docs/number-guessing-game.png`.
