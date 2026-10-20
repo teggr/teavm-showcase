@@ -1,0 +1,287 @@
+@font-face {
+  font-family: Inter;
+  src: url("inter-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+body.exhibition {
+  --paper: #f7f3ea;
+  --ink: #171717;
+  --accent: #ffd92f;
+  --pink: #f45bc7;
+  --blue: #1689ef;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  display: block;
+  padding: 100px 4% 40px;
+}
+body.create {
+  --accent: #f45bc7;
+}
+body.connect {
+  --accent: #1689ef;
+}
+body.learn {
+  --accent: #ff4b26;
+}
+.exhibition .exhibition-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4%;
+  border-bottom: 1px solid var(--ink);
+  gap: 20px;
+}
+.exhibition-nav a {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+}
+.exhibition-nav a:first-child {
+  font-size: 29px;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+}
+.exhibition-nav span {
+  color: var(--blue);
+}
+.exhibition-nav b {
+  color: #ff4b26;
+}
+.exhibition-nav small {
+  font-size: 8px;
+  letter-spacing: 3px;
+  margin-left: 14px;
+}
+.exhibition h1 {
+  color: var(--ink);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  font-size: clamp(36px, 5vw, 64px);
+}
+.exhibition h1 span {
+  color: var(--ink);
+}
+.exhibition .eyebrow {
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.exhibition .subtitle,
+.exhibition .page-header > p:last-child,
+.exhibition .instructions,
+.exhibition .status,
+.exhibition .hint,
+.exhibition .counter,
+.exhibition .chart-description,
+.exhibition .fixture-note,
+.exhibition small,
+.exhibition .tech-note,
+.exhibition .keyboard-hint {
+  color: #45413b;
+}
+.exhibition .page-heading,
+.exhibition .page-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+.exhibition .game-card,
+.exhibition .workspace,
+.exhibition .panel {
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: 7px 7px 0 var(--accent);
+}
+.exhibition .canvas-frame {
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+}
+.exhibition .game-toolbar {
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 15px;
+}
+.exhibition .objective,
+.exhibition .score {
+  color: var(--ink);
+}
+.exhibition button {
+  background: var(--ink);
+  color: var(--paper);
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 44px;
+}
+.exhibition button:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--ink);
+  filter: none;
+}
+.exhibition input,
+.exhibition select {
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  background: #fffdf8;
+  color: var(--ink);
+}
+.exhibition button:focus-visible,
+.exhibition input:focus-visible,
+.exhibition select:focus-visible,
+.exhibition a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+.exhibition .tool-button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.exhibition .swatch {
+  width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+}
+.exhibition .swatch.blue {
+  background: #1689ef;
+}
+.exhibition .swatch.red {
+  background: #ff4b26;
+}
+.exhibition .swatch.green {
+  background: #168364;
+}
+.exhibition .swatch.amber {
+  background: #ffd92f;
+}
+.exhibition .swatch.purple {
+  background: #f45bc7;
+}
+.exhibition .touch-controls button,
+.exhibition #jump {
+  background: var(--accent);
+  color: var(--ink);
+}
+.exhibition .result,
+.exhibition .feedback {
+  color: var(--ink);
+  font-weight: 800;
+}
+.exhibition.learn .game-card {
+  margin: 65px auto 0;
+  width: min(100%, 560px);
+  padding: 40px;
+  transform: rotate(-1deg);
+  border-top: 15px solid var(--accent);
+}
+.exhibition.learn h1 {
+  font-size: 46px;
+  line-height: 1;
+}
+.exhibition.learn .guess-controls {
+  gap: 12px;
+}
+.exhibition.learn input {
+  font-size: 25px;
+  font-weight: 750;
+}
+.exhibition.learn .new-game {
+  background: var(--ink);
+}
+.exhibition.learn .feedback {
+  border-top: 1px solid;
+  padding-top: 20px;
+}
+.exhibition.connect .panel {
+  border-top: 10px solid var(--accent);
+}
+.exhibition .chart-wrap {
+  position: relative;
+  height: 260px;
+  min-width: 0;
+}
+.exhibition .game-page {
+  max-width: 1080px;
+}
+.exhibition .game-page .game-card {
+  background: var(--accent);
+}
+.exhibition .game-footer {
+  padding-top: 10px;
+}
+.exhibition kbd {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--ink);
+  border-radius: 0;
+}
+.exhibition .editor {
+  max-width: 1100px;
+}
+.exhibition .workspace {
+  border-top: 12px solid var(--accent);
+}
+.exhibition .canvas-frame {
+  background-color: #fffdf8;
+  background-image: radial-gradient(#cfc8bc 0.8px, transparent 0.8px);
+}
+@media (max-width: 600px) {
+  body.exhibition {
+    padding: 95px 5% 30px;
+  }
+  .exhibition-nav a:last-child {
+    font-size: 12px;
+  }
+  .exhibition-nav small {
+    display: none;
+  }
+  .exhibition.learn .game-card {
+    padding: 25px;
+    margin-top: 30px;
+  }
+  .exhibition.learn h1 {
+    font-size: 36px;
+  }
+  .exhibition .chart-panel {
+    grid-template-columns: 1fr;
+  }
+  .exhibition .toolbar {
+    gap: 15px;
+  }
+  .exhibition .tool-group {
+    gap: 5px;
+  }
+  .exhibition .tool-button {
+    font-size: 12px;
+  }
+  .exhibition .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .exhibition .game-toolbar {
+    flex-wrap: wrap;
+  }
+  .exhibition .restart {
+    margin-left: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

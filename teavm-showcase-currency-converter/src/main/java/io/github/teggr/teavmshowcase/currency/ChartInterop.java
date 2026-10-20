@@ -34,8 +34,8 @@ final class ChartInterop {
                     datasets: [{
                         label: "1 " + source + " to " + target,
                         data: rows.map(item => item.rate),
-                        borderColor: "#4f46e5",
-                        backgroundColor: "rgb(79 70 229 / 12%)",
+                        borderColor: "#1689ef",
+                        backgroundColor: "rgb(22 137 239 / 12%)",
                         fill: true,
                         tension: 0.25,
                         pointRadius: 3

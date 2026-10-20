@@ -1,0 +1,7 @@
+<site>
+    <title>TeaVM Showcase | Java everywhere</title>
+    <description>Real Java. Real browser applications. No ordinary demos.</description>
+    <baseUrl>https://teggr.github.io/teavm-showcase/</baseUrl>
+    <theme>default</theme>
+    <author><name>TeaVM Showcase contributors</name></author>
+</site>

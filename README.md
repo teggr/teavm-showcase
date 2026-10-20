@@ -8,8 +8,11 @@ This Maven reactor contains standalone TeaVM examples. Each example lives in its
 - [`teavm-showcase-currency-converter`](teavm-showcase-currency-converter/README.md) — a TeaVM currency explorer with an asynchronous Spring Boot API and a Chart.js demo-rate history chart.
 - [`teavm-showcase-drawing-app`](teavm-showcase-drawing-app/README.md) — a Java drawing editor using TeaVM and the browser Canvas 2D API.
 - [`teavm-showcase-platform-game`](teavm-showcase-platform-game/README.md) — a single-screen Java platform game compiled to browser JavaScript with TeaVM.
+- [`teavm-showcase-site`](teavm-showcase-site/README.md) — the Electrostatic-generated companion site, assembling all four examples for [GitHub Pages](https://teggr.github.io/teavm-showcase/).
 
 ## Build
+
+The full reactor requires **JDK 21+** for Electrostatic. The individual TeaVM example modules retain their Java 17 compilation target.
 
 Build and test every module from the repository root:
 
@@ -17,6 +20,8 @@ Build and test every module from the repository root:
 mvn test
 mvn package
 ```
+
+The site is generated in `teavm-showcase-site/target/generated-site/`. After building, preview it with `jwebserver -p 8097 -d teavm-showcase-site/target`, then open <http://localhost:8097/generated-site/>. See the [site README](teavm-showcase-site/README.md) for screenshot iteration, asset provenance and GitHub Pages deployment. The Pages currency demo uses explicitly labelled static fixtures; the standalone Spring Boot version remains API-backed.
 
 To work with the number guessing module alone, use `mvn -pl teavm-showcase-number-guessing test` or `mvn -pl teavm-showcase-number-guessing package`. Its generated browser application is in `teavm-showcase-number-guessing/target/javascript/`; see the [module README](teavm-showcase-number-guessing/README.md) for local run instructions.
 

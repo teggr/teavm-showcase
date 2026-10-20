@@ -8,7 +8,7 @@ import org.teavm.jso.dom.html.HTMLDocument;
 import org.teavm.jso.dom.html.HTMLElement;
 
 public final class DrawingApp {
-    private static final String[] COLORS = { "#3b82f6", "#ef4444", "#10b981", "#f59e0b", "#8b5cf6" };
+    private static final String[] COLORS = { "#1689ef", "#ff4b26", "#168364", "#ffd92f", "#f45bc7" };
 
     private final HTMLCanvasElement canvas;
     private final DrawingController controller = new DrawingController(new DrawingModel());
