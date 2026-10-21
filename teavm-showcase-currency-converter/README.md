@@ -63,3 +63,5 @@ curl -i http://localhost:8080/api/conversions \
 Run only the currency explorer tests with `mvn -pl teavm-showcase-currency-converter test`. The complete repository suite is `mvn clean verify`.
 
 The module combines both browser and server sources under `src/main/java`; browser assets are in `src/main/resources/static`. Chart.js **4.5.1** is served locally, and its MIT license is included at `src/main/resources/static/vendor/CHARTJS-LICENSE.txt`. The client and server use separate model types where their JSON representations differ.
+
+The standalone page always submits conversions to `/api/conversions`. A static host can opt into the same Java conversion fixtures in the browser by setting `data-static-fixtures="true"` on `<body>`; the showcase site applies that override only to its copied example page.
