@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Write Java. Run everywhere. Play, create, connect and learn with four real Java applications running in your browser with TeaVM."
+    />
+    <meta name="theme-color" content="#F7F3EA" />
+    <meta property="og:title" content="TeaVM Showcase — Java everywhere" />
+    <meta
+      property="og:description"
+      content="Real Java. Real browser applications. No ordinary demos."
+    />
+    <title>TeaVM Showcase | Java everywhere</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="first-screen" id="home">
+      <header class="site-header">
+        <a class="wordmark" href="#home" aria-label="TeaVM Showcase home"
+          >Tea<span>VM</span><b>.</b><small>SHOWCASE</small></a
+        >
+        <nav aria-label="Main navigation">
+          <a class="active" href="#home">Home</a>
+          <a href="#examples">Examples</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#about">About</a>
+        </nav>
+        <a
+          class="github-symbol"
+          href="https://github.com/teggr/teavm-showcase"
+          aria-label="TeaVM Showcase on GitHub"
+          ><svg><use href="assets/icons.svg#github" /></svg
+        ></a>
+        <a
+          class="button github-button"
+          href="https://github.com/teggr/teavm-showcase"
+          >View on GitHub <span aria-hidden="true">&rarr;</span></a
+        >
+      </header>
+      <main id="main">
+        <section class="hero" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <h1 id="hero-heading">
+              Write Java.<br /><span>Run everywhere.</span>
+            </h1>
+            <p>
+              Explore interactive browser applications built with TeaVM.<br
+                class="desktop-break"
+              />
+              Real Java code, running in your browser.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#examples"
+                >Explore the examples <span aria-hidden="true">&rarr;</span></a
+              >
+              <a class="button outline" href="#how-it-works">How it works</a>
+            </div>
+          </div>
+          <div
+            class="collage"
+            role="img"
+            aria-label="Monochrome portrait looking towards an orange sun, with blue and pink paper and mountain cutouts"
+          >
+            <div class="sun"></div>
+            <div class="paper blue-paper"></div>
+            <div class="paper white-paper"></div>
+            <div class="paper pink-paper"></div>
+            <img
+              class="mountains"
+              src="assets/mountains.png"
+              alt=""
+              width="457"
+              height="260"
+            />
+            <img
+              class="portrait"
+              src="assets/portrait.png"
+              alt=""
+              width="450"
+              height="380"
+            />
+            <p class="annotation same-java">
+              Same<br />Java.<br />Different<br />world.<i></i>
+            </p>
+            <p class="annotation browser-note">
+              <span aria-hidden="true">&#10549;</span> Java<br />in the<br />browser<i
+              ></i>
+            </p>
+            <svg class="birds" viewBox="0 0 170 100" aria-hidden="true">
+              <path
+                d="M10 65q8-10 17 0q6-12 14-8M90 30q8-12 17-2q4-17 15-15M125 80q8-11 14-2q5-12 13-8"
+              />
+            </svg>
+          </div>
+          <nav class="stickers" aria-label="Choose an experiment">
+            <a href="#play">PLAY.</a><a href="#create">CREATE.</a
+            ><a href="#connect">CONNECT.</a><a href="#learn">LEARN.</a>
+          </nav>
+          <span class="edge-sun" aria-hidden="true"></span>
+        </section>
+        <section
+          id="examples"
+          class="showcase"
+          aria-label="Four Java browser experiments"
+        >
+          <article id="play" class="poster play">
+            <div class="poster-label"><span>01</span> PLATFORM GAME</div>
+            <h2>Play</h2>
+            <p>A fun platformer written<br />in Java with TeaVM.</p>
+            <svg
+              class="scribble play-scribble"
+              viewBox="0 0 90 80"
+              aria-hidden="true"
+            >
+              <path
+                d="M75 8Q38 25 18 62m2-19-3 21 22-6M71 48l11-25M77 57l11-13"
+              />
+            </svg>
+            <a
+              class="preview"
+              href="examples/play/"
+              aria-label="Launch the Skybound platform game"
+              ><span class="window-bar" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><img
+                src="assets/play.png"
+                alt="The actual Skybound Java platform game: platforms, collectible stars and a jumping character"
+                width="960"
+                height="540"
+            /></a>
+            <a class="button demo-button" href="examples/play/"
+              >Play demo <span aria-hidden="true">&rarr;</span></a
+            >
+          </article>
+          <article id="create" class="poster create">
+            <div class="poster-label"><span>02</span> DRAWING APP</div>
+            <h2>Create</h2>
+            <p>A creative drawing application<br />using the browser canvas.</p>
+            <svg class="scribble crown" viewBox="0 0 80 70" aria-hidden="true">
+              <path d="m12 47-5-27 21 18 14-27 7 28 24-19-8 30zm0 9 54-2" />
+            </svg>
+            <a
+              class="preview"
+              href="examples/create/"
+              aria-label="Launch Canvas Studio"
+              ><span class="window-bar" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><img
+                src="assets/create.png"
+                alt="The actual Canvas Studio app with drawing tools, colour palette and shapes drawn on its canvas"
+                width="960"
+                height="600"
+            /></a>
+            <a class="button demo-button" href="examples/create/"
+              >Try it now <span aria-hidden="true">&rarr;</span></a
+            >
+          </article>
+          <article id="connect" class="poster connect">
+            <div class="poster-label"><span>03</span> CURRENCY CONVERTER</div>
+            <h2>Connect</h2>
+            <p>
+              Call APIs, convert currencies and<br />visualise the data with
+              charts.
+            </p>
+            <svg
+              class="scribble sparkle"
+              viewBox="0 0 60 80"
+              aria-hidden="true"
+            >
+              <path
+                d="m30 4 3 29 21-10-15 19 15 10-21-3-2 26-7-26-20 5 16-16L8 20l18 13z"
+              />
+            </svg>
+            <a
+              class="preview"
+              href="examples/connect/"
+              aria-label="Launch Currency Explorer with demo fixture rates"
+              ><span class="window-bar" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><img
+                src="assets/connect.png"
+                alt="The actual Currency Explorer with GBP to USD conversion and an illustrative fixture-rate chart"
+                width="960"
+                height="600"
+            /></a>
+            <a class="button demo-button" href="examples/connect/"
+              >Explore demo <span aria-hidden="true">&rarr;</span></a
+            >
+          </article>
+          <article id="learn" class="poster learn">
+            <div class="poster-label"><span>04</span> NUMBER GUESSING</div>
+            <h2>Learn</h2>
+            <p>A simple game demonstrating<br />Java logic in the browser.</p>
+            <svg class="scribble rays" viewBox="0 0 90 80" aria-hidden="true">
+              <path
+                d="m15 47-9-20m21 12 4-32m10 35L62 9M48 51l34-20M53 61l27-3M50 71l15 5"
+              />
+            </svg>
+            <a
+              class="preview"
+              href="examples/learn/"
+              aria-label="Launch Number Guessing"
+              ><span class="window-bar" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><img
+                src="assets/learn.png"
+                alt="The actual number guessing game, with a guess input, button and feedback"
+                width="960"
+                height="600"
+            /></a>
+            <a class="button demo-button" href="examples/learn/"
+              >Play demo <span aria-hidden="true">&rarr;</span></a
+            >
+          </article>
+        </section>
+      </main>
+      <div class="feature-strip" aria-label="Built with Java">
+        <div>
+          <svg aria-hidden="true"><use href="assets/icons.svg#java" /></svg>
+          <p>
+            <strong>Real Java code</strong
+            ><span>Write in Java, compile with TeaVM</span>
+          </p>
+        </div>
+        <div>
+          <svg aria-hidden="true"><use href="assets/icons.svg#globe" /></svg>
+          <p>
+            <strong>Browser APIs</strong><span>Use DOM, Canvas and more</span>
+          </p>
+        </div>
+        <div>
+          <svg aria-hidden="true"><use href="assets/icons.svg#bolt" /></svg>
+          <p>
+            <strong>Interactive examples</strong
+            ><span>Play, create, connect and learn</span>
+          </p>
+        </div>
+        <div>
+          <svg aria-hidden="true"><use href="assets/icons.svg#github" /></svg>
+          <p>
+            <strong>Open source</strong><span>Explore the code on GitHub</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <section
+      id="how-it-works"
+      class="how-it-works"
+      aria-labelledby="how-heading"
+    >
+      <div class="section-kicker">
+        <span>UNDER THE PAPER</span><span>EXPERIMENT NO. 001</span>
+      </div>
+      <h2 id="how-heading">Java, but make it <em>playful.</em></h2>
+      <p>Real Java. Real browser applications. No ordinary demos.</p>
+      <div class="pipeline">
+        <div>
+          <span>01 / WRITE</span>
+          <h3>Same Java.</h3>
+          <p>Classes, models, tests. The language you already know.</p>
+          <code>PlatformGame.java</code>
+        </div>
+        <span class="pipeline-arrow" aria-hidden="true">&rarr;</span>
+        <div>
+          <span>02 / COMPILE</span>
+          <h3>Meet TeaVM.</h3>
+          <p>Compile Java bytecode into JavaScript for the browser.</p>
+          <code>mvn clean verify</code>
+        </div>
+        <span class="pipeline-arrow" aria-hidden="true">&rarr;</span>
+        <div>
+          <span>03 / EXPLORE</span>
+          <h3>Different world.</h3>
+          <p>DOM, Canvas, events and data. No Java installation needed.</p>
+          <code>classes.js &rarr; your browser</code>
+        </div>
+      </div>
+      <div class="build-note">
+        <p>
+          Try it yourself: clone the repository, install JDK 21+ and Maven, then
+          run <code>mvn clean verify</code>.<br />The companion site is
+          generated with
+          <a href="https://github.com/teggr/electrostatic">Electrostatic</a>'s
+          Maven plugin.
+        </p>
+        <a class="button" href="https://github.com/teggr/teavm-showcase#build"
+          >Get the source <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+    </section>
+    <footer id="about" class="about">
+      <a class="wordmark" href="#home"
+        >Tea<span>VM</span><b>.</b><small>SHOWCASE</small></a
+      >
+      <p>
+        A small exhibition of what Java can do in a browser.<br />Four
+        experiments. One language. Plenty of possibilities.
+      </p>
+      <p class="fine-print">
+        Currency conversions use deterministic demo fixtures, not live market
+        data.<br />Independent showcase. Built with TeaVM &amp; Electrostatic.
+      </p>
+      <a href="https://github.com/teggr/teavm-showcase"
+        >Open source on GitHub &nearr;</a
+      >
+    </footer>
+  </body>
+</html>

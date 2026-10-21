@@ -1,4 +1,7 @@
 package io.github.teggr.teavmshowcase.currency;
+
+import java.math.BigDecimal;
+
 import org.teavm.jso.JSBody;
 import org.teavm.jso.dom.events.Event;
 import org.teavm.jso.dom.html.HTMLDocument;
@@ -7,6 +10,7 @@ import org.teavm.jso.dom.html.HTMLInputElement;
 import org.teavm.jso.dom.html.HTMLSelectElement;
 import org.teavm.jso.ajax.XMLHttpRequest;
 import org.teavm.jso.json.JSON;
+import org.teavm.jso.core.JSArray;
 
 public final class CurrencyConverterApp {
     private final HTMLInputElement amountInput;
@@ -72,6 +76,10 @@ public final class CurrencyConverterApp {
         }
         String from = fromInput.getValue();
         String to = toInput.getValue();
+        if (usesStaticFixtures()) {
+            convertFixture(amount, from, to);
+            return;
+        }
         long requestId = ++requestSequence;
         requestInProgress = true;
         submitButton.setAttribute("disabled", "");
@@ -94,6 +102,36 @@ public final class CurrencyConverterApp {
         request.onError(errorEvent -> finishNetworkError(requestId));
         request.send("{\"amount\":" + amount + ",\"from\":\"" + from + "\",\"to\":\"" + to + "\"}");
     }
+
+    private void convertFixture(String amount, String from, String to) {
+        try {
+            ConversionResponse response = new ConversionService().convert(
+                    new ConversionRequest(new BigDecimal(amount), from, to));
+            result.setTextContent(formatMoney(response.amount().doubleValue(), from)
+                    + " = " + formatMoney(response.result().doubleValue(), to));
+            status.setTextContent("Static demo fixtures (no API request): 1 " + from + " = "
+                    + response.rate().stripTrailingZeros().toPlainString() + " " + to
+                    + " · As of " + response.asOf() + ". Not live market data.");
+            JSArray<RateHistoryPointView> history = JSArray.create();
+            for (RateHistoryPoint point : response.history()) {
+                history.push(historyPoint(point.date(), point.rate().doubleValue()));
+            }
+            try {
+                ChartInterop.update(history, from, to);
+            } catch (RuntimeException e) {
+                status.setTextContent(status.getTextContent() + " The rate history chart could not be updated.");
+            }
+        } catch (ConversionException e) {
+            result.setTextContent("");
+            status.setTextContent(e.getMessage());
+        }
+    }
+
+    @JSBody(script = "return document.body.dataset.staticFixtures === 'true';")
+    private static native boolean usesStaticFixtures();
+
+    @JSBody(params = { "date", "rate" }, script = "return {date: date, rate: rate};")
+    private static native RateHistoryPointView historyPoint(String date, double rate);
 
     private void finishRequest(long requestId, XMLHttpRequest request) {
         if (requestId != requestSequence || !requestInProgress) {

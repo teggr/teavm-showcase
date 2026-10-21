@@ -16,6 +16,7 @@
         <module>teavm-showcase-currency-converter</module>
         <module>teavm-showcase-drawing-app</module>
         <module>teavm-showcase-platform-game</module>
+        <module>teavm-showcase-site</module>
     </modules>
 
     <properties>

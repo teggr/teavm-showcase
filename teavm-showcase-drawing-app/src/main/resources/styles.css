@@ -102,11 +102,11 @@ button {
     border-radius: 50%;
 }
 
-.blue { background: #3b82f6; }
-.red { background: #ef4444; }
-.green { background: #10b981; }
-.amber { background: #f59e0b; }
-.purple { background: #8b5cf6; }
+.blue { background: #1689ef; }
+.red { background: #ff4b26; }
+.green { background: #168364; }
+.amber { background: #ffd92f; }
+.purple { background: #f45bc7; }
 
 button:hover {
     filter: brightness(0.96);

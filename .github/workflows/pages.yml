@@ -1,0 +1,50 @@
+name: Build and publish showcase
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build and test all applications and the Electrostatic site
+        run: mvn -B -ntp clean verify
+      - name: Check published paths
+        run: |
+          test -s teavm-showcase-site/target/generated-site/index.html
+          for app in play create connect learn; do
+            test -s "teavm-showcase-site/target/generated-site/examples/$app/classes.js"
+          done
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: teavm-showcase-site/target/generated-site
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v6
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -40,7 +40,7 @@ public final class DrawingController {
             return;
         }
         model.clearSelection();
-        preview = new DrawingShape(tool.getShapeType(), x, y, x, y, "#3b82f6");
+        preview = new DrawingShape(tool.getShapeType(), x, y, x, y, "#1689ef");
     }
 
     public void pointerMove(double x, double y) {
