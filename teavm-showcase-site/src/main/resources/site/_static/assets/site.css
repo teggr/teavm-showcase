@@ -467,8 +467,8 @@ h1 span {
   transform: rotate(-3.5deg);
   transform-origin: 50% 0;
 }
-.poster:hover,
-.poster:focus-within {
+.showcase .poster:hover,
+.showcase .poster:focus-within {
   transform: translateY(-7px) rotate(0);
   z-index: 7;
 }

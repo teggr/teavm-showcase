@@ -121,6 +121,17 @@ class BrowserQa {
                     Object.fromEntries(['.site-header','.hero','h1','.showcase','.feature-strip'].map(s=>{
                       const r=document.querySelector(s).getBoundingClientRect();return [s,{x:r.x,y:r.y,w:r.width,h:r.height}]}))
                     """));
+            for (int width : new int[]{1024, 1672}) {
+                page.setViewportSize(width, 950);
+                page.navigate(base + "/");
+                for (int i = 0; i < 4; i++) {
+                    Locator poster = page.locator(".poster").nth(i);
+                    poster.hover();
+                    page.waitForTimeout(300);
+                    check((Boolean) poster.evaluate("el => new DOMMatrixReadOnly(getComputedStyle(el).transform).m42 < -6"),
+                            "Poster hover animation " + (i + 1) + " at " + width);
+                }
+            }
             for (int width : new int[]{1024, 820, 390}) {
                 page.setViewportSize(width, 950);
                 page.screenshot(new Page.ScreenshotOptions().setPath(artifacts.resolve("layout-" + width + ".png")).setFullPage(true));
