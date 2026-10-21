@@ -39,6 +39,7 @@ class AssembleSiteTest {
             assertTrue(page.contains("href=\"../../\""));
             assertTrue(page.contains("exhibition-nav"));
             assertEquals(module.getKey().equals("connect"), page.contains("data-static-fixtures=\"true\""));
+            assertEquals(module.getKey().equals("create"), page.contains("data-drawing-colors=\"showcase\""));
             assertEquals(original, Files.readString(compiled(module.getValue()).resolve("index.html")));
             assertTrue(Files.isRegularFile(published.resolve("classes.js")));
         }

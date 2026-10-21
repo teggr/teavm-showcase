@@ -43,6 +43,8 @@ public final class AssembleSite {
             if (app.getKey().equals("connect")) {
                 page = page.replace("<body class=", "<body data-static-fixtures=\"true\" class=")
                         .replace("API demo history", "Static fixture history");
+            } else if (app.getKey().equals("create")) {
+                page = page.replace("<body class=", "<body data-drawing-colors=\"showcase\" class=");
             }
             Files.writeString(index, page);
         }

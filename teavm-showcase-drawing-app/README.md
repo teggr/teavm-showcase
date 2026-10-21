@@ -17,6 +17,8 @@ The second command compiles the TeaVM app and starts its Java static server. Ope
 
 Choose Select to pick and move the topmost shape. Choose Rectangle, Ellipse or Arrow, then drag on the canvas to draw. Dragging in either direction is supported. Select a shape and choose a palette swatch to recolour it. Clicking a swatch without a selection only displays a status message.
 
+The standalone page keeps the original blue, red, green, amber and purple palette. A hosting page can opt into the showcase palette by setting `data-drawing-colors="showcase"` on `<body>`; the exhibition site sets this only on its copied example page.
+
 ## Implementation notes
 
 - Shapes are Java objects holding their start and end points and a fixed-palette colour. Rectangles and ellipses use normalized bounds; arrows retain their directed start and end points.

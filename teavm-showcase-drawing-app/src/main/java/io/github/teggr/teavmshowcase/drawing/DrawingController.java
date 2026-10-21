@@ -2,6 +2,7 @@ package io.github.teggr.teavmshowcase.drawing;
 
 public final class DrawingController {
     private final DrawingModel model;
+    private final String previewColor;
     private DrawingTool tool = DrawingTool.SELECT;
     private DrawingShape preview;
     private double lastX;
@@ -9,7 +10,12 @@ public final class DrawingController {
     private boolean moving;
 
     public DrawingController(DrawingModel model) {
+        this(model, "#3b82f6");
+    }
+
+    public DrawingController(DrawingModel model, String previewColor) {
         this.model = model;
+        this.previewColor = previewColor;
     }
 
     public DrawingModel getModel() {
@@ -40,7 +46,7 @@ public final class DrawingController {
             return;
         }
         model.clearSelection();
-        preview = new DrawingShape(tool.getShapeType(), x, y, x, y, "#1689ef");
+        preview = new DrawingShape(tool.getShapeType(), x, y, x, y, previewColor);
     }
 
     public void pointerMove(double x, double y) {

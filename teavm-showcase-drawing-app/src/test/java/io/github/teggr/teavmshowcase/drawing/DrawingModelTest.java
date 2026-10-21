@@ -106,6 +106,19 @@ class DrawingModelTest {
     }
 
     @Test
+    void controllerUsesConfiguredPreviewColorAndOriginalColorByDefault() {
+        DrawingController defaultController = new DrawingController(new DrawingModel());
+        defaultController.setTool(DrawingTool.RECTANGLE);
+        defaultController.pointerDown(10, 10);
+        assertEquals("#3b82f6", defaultController.getPreview().getColor());
+
+        DrawingController showcaseController = new DrawingController(new DrawingModel(), "#1689ef");
+        showcaseController.setTool(DrawingTool.RECTANGLE);
+        showcaseController.pointerDown(10, 10);
+        assertEquals("#1689ef", showcaseController.getPreview().getColor());
+    }
+
+    @Test
     void pointerCancelDiscardsPreview() {
         DrawingController controller = new DrawingController(new DrawingModel());
         controller.setTool(DrawingTool.RECTANGLE);
