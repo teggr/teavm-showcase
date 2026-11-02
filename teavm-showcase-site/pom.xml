@@ -53,7 +53,7 @@
             <plugin>
                 <groupId>io.github.teggr</groupId>
                 <artifactId>electrostatic-maven-plugin</artifactId>
-                <version>0.0.4</version>
+                <version>0.0.6</version>
                 <configuration>
                     <inputDirectory>${project.build.outputDirectory}/site</inputDirectory>
                 </configuration>

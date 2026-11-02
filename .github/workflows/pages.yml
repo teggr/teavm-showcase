@@ -23,6 +23,8 @@ jobs:
           java-version: '21'
           cache: maven
       - name: Build and test all applications and the Electrostatic site
+        env:
+          POSTHOG_KEY: ${{ secrets.POSTHOG_KEY }}
         run: mvn -B -ntp clean verify
       - name: Check published paths
         run: |
